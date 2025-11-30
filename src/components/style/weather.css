@@ -1,0 +1,225 @@
+/* weather.css - Fully Responsive Mobile-First */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Mobile-first container */
+.app {
+  width: 100%;
+  max-width: 420px;
+  margin: 20px;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 24px;
+  padding: 1.5rem;
+  color: white;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100%;
+}
+
+/* Header - Search + Location Button */
+.header {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.header input {
+  flex: 1;
+  min-width: 200px;
+  padding: 14px 18px;
+  border: none;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 1rem;
+  outline: none;
+}
+
+.header input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.header button {
+  padding: 14px 20px;
+  border: none;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.25);
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  transition: background 0.3s;
+}
+
+.header button:hover,
+.geo:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.geo {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+/* Main Section - Temp + City + Icon */
+.main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.main > div:first-child {
+  flex: 1;
+  min-width: 200px;
+}
+
+.main h1 {
+  font-size: 4.5rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1;
+}
+
+.main h2 {
+  font-size: 1.4rem;
+  opacity: 0.95;
+  margin: 0.5rem 0;
+}
+
+.main p {
+  text-transform: capitalize;
+  margin: 0.5rem 0;
+  opacity: 0.85;
+  font-size: 1.1rem;
+}
+
+.details {
+  display: flex;
+  gap: 1.2rem;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  flex-wrap: wrap;
+}
+
+.icon {
+  font-size: 5.5rem;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Forecast Grid */
+.forecast {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.8rem;
+  text-align: center;
+}
+
+.day {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem 0.5rem;
+  border-radius: 16px;
+  backdrop-filter: blur(4px);
+}
+
+.day p {
+  font-size: 0.85rem;
+  margin-bottom: 0.4rem;
+  opacity: 0.9;
+}
+
+.day div {
+  font-size: 2rem;
+  margin: 0.5rem 0;
+}
+
+.day strong {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* Loading State */
+.loading {
+  text-align: center;
+  font-size: 1.4rem;
+  padding: 3rem 1rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 480px) {
+  .glass-card {
+    padding: 1.25rem;
+    border-radius: 20px;
+  }
+
+  .main {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .main h1 {
+    font-size: 4rem;
+  }
+
+  .icon {
+    font-size: 5rem;
+  }
+
+  .header {
+    flex-direction: column;
+  }
+
+  .header input,
+  .header button {
+    width: 100%;
+  }
+
+  .forecast {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .day {
+    padding: 1.2rem 0.8rem;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .main h1 {
+    font-size: 5rem;
+  }
+
+  .icon {
+    font-size: 6rem;
+  }
+}
+
+@media (min-width: 769px) {
+  .app {
+    max-width: 440px;
+  }
+
+  .glass-card {
+    padding: 2rem;
+  }
+
+  .main h1 {
+    font-size: 6rem;
+  }
+
+  .icon {
+    font-size: 7rem;
+  }
+}
